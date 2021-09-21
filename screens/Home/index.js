@@ -1,6 +1,11 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
-import { HeaderTabs, SearchBar, Categories } from "../../components";
+import { SafeAreaView, StyleSheet, View, ScrollView } from "react-native";
+import {
+  HeaderTabs,
+  SearchBar,
+  Categories,
+  RestaurantItem,
+} from "../../components";
 
 export default function Home() {
   return (
@@ -9,7 +14,10 @@ export default function Home() {
         <HeaderTabs />
         <SearchBar />
       </View>
-      <Categories />
+      <ScrollView>
+        <Categories />
+        <RestaurantItem />
+      </ScrollView>
     </SafeAreaView>
   );
 }
