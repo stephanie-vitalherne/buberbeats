@@ -1,36 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
-
-const items = [
-  {
-    image: require("../assets/images/shopping-bag.png"),
-    title: "Pick-up",
-  },
-  {
-    image: require("../assets/images/soft-drink.png"),
-    title: "Soft Drinks",
-  },
-  {
-    image: require("../assets/images/bread.png"),
-    title: "Bakery Items",
-  },
-  {
-    image: require("../assets/images/fast-food.png"),
-    title: "Fast Foods",
-  },
-  {
-    image: require("../assets/images/deals.png"),
-    title: "Deals",
-  },
-  {
-    image: require("../assets/images/coffee.png"),
-    title: "Coffee & Tea",
-  },
-  {
-    image: require("../assets/images/desserts.png"),
-    title: "Desserts",
-  },
-];
+import { items } from "../data/dummyData";
 
 export default function Categories() {
   return (

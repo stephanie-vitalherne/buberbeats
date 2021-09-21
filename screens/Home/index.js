@@ -6,14 +6,15 @@ import {
   Categories,
   RestaurantItems,
 } from "../../components";
-import { localRestaurants } from "../../components/RestaurantItems";
-import { YELP_API_KEY } from "../../key";
+import { localRestaurants } from "../../data/dummyData";
+import { YELP_API_KEY } from "../../data/key";
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
+  const [city, setCity] = useState("Miami");
 
   const getRestaurants = () => {
-    const yelpURL = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=SpringValley`;
+    const yelpURL = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
     const apiOptions = {
       headers: {
         Authorization: `Bearer ${YELP_API_KEY}`,
@@ -27,13 +28,13 @@ export default function Home() {
 
   useEffect(() => {
     getRestaurants();
-  }, []);
+  }, [city]);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
         <HeaderTabs />
-        <SearchBar />
+        <SearchBar cityHandler={setCity} />
       </View>
       <ScrollView>
         <Categories />
