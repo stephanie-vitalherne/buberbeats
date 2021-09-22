@@ -59,4 +59,27 @@ const localRestaurants = [
   },
 ];
 
-export { items, localRestaurants };
+const tabs = [
+  {
+    icon: "home",
+    text: "Home",
+  },
+  {
+    icon: "search",
+    text: "Browse",
+  },
+  {
+    icon: "shopping-bag",
+    text: "Grocery",
+  },
+  {
+    icon: "receipt",
+    text: "Orders",
+  },
+  {
+    icon: "user",
+    text: "Account",
+  },
+];
+
+export { items, localRestaurants, tabs };

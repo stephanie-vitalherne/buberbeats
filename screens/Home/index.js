@@ -5,9 +5,11 @@ import {
   SearchBar,
   Categories,
   RestaurantItems,
+  BottomTabs,
 } from "../../components";
 import { localRestaurants } from "../../data/dummyData";
 import { YELP_API_KEY } from "../../data/key";
+import { Divider } from "react-native-elements";
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
@@ -47,6 +49,8 @@ export default function Home() {
         <Categories />
         <RestaurantItems restaurantData={restaurantData} />
       </ScrollView>
+      <Divider width={1} />
+      <BottomTabs />
     </SafeAreaView>
   );
 }
