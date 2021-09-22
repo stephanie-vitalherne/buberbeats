@@ -3,10 +3,10 @@ import { View, Text, StyleSheet } from "react-native";
 import { About, MenuItems } from "../../components";
 import { Divider } from "react-native-elements";
 
-export default function RestaurantDetail() {
+export default function RestaurantDetail({ route }) {
   return (
     <View style={styles.mainContainer}>
-      <About />
+      <About route={route} />
       <Divider width={1} style={styles.divider} />
       <MenuItems />
     </View>
