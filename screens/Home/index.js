@@ -11,7 +11,8 @@ import { YELP_API_KEY } from "../../data/key";
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
-  const [city, setCity] = useState("Miami");
+  const [city, setCity] = useState("Spring Valley");
+  const [activeTab, setActiveTab] = useState("Delivery");
 
   const getRestaurants = () => {
     const yelpURL = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
@@ -23,17 +24,23 @@ export default function Home() {
 
     return fetch(yelpURL, apiOptions)
       .then((response) => response.json())
-      .then((json) => setRestaurantData(json.businesses));
+      .then((json) =>
+        setRestaurantData(
+          json.businesses.filter((business) =>
+            business.transactions.includes(activeTab.toLowerCase())
+          )
+        )
+      );
   };
 
   useEffect(() => {
     getRestaurants();
-  }, [city]);
+  }, [city, activeTab]);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
-        <HeaderTabs />
+        <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <SearchBar cityHandler={setCity} />
       </View>
       <ScrollView>
