@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "react-native-vector-icons";
-import { tabs } from "../data/dummyData";
+import { tabs } from "../../data/dummyData";
 
 export default function BottomTabs() {
   return (

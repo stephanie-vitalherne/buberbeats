@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
-import { items } from "../data/dummyData";
+import { items } from "../../data/dummyData";
 
 export default function Categories() {
   return (

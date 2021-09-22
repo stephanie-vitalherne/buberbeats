@@ -82,4 +82,44 @@ const tabs = [
   },
 ];
 
-export { items, localRestaurants, tabs };
+const foods = [
+  {
+    title: "Lasagna",
+    description: "With butter lettuce, tomato and sauce bechamel",
+    price: "$13.50",
+    image:
+      "https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-14-scaled.jpg",
+  },
+  {
+    title: "Tandoori Chicken",
+    description:
+      "Amazing Indian dish with tenderloin chicken off the sizzles 🔥",
+    price: "$19.20",
+    image: "https://i.ytimg.com/vi/BKxGodX9NGg/maxresdefault.jpg",
+  },
+  {
+    title: "Chilaquiles",
+    description:
+      "Chilaquiles with cheese and sauce. A delicious Mexican dish 🇲🇽",
+    price: "$14.50",
+    image:
+      "https://assets.epicurious.com/photos/5a9ecb6a9d7f7965083147b4/4:3/w_4444,h_3333,c_limit/eggshop-chilaquiles-recipe-HC-030618.jpg",
+  },
+  {
+    title: "Chicken Caesar Salad",
+    description:
+      "One can never go wrong with a chicken caesar salad. Healthy option with greens and proteins!",
+    price: "$21.50",
+    image:
+      "https://healthyfitnessmeals.com/wp-content/uploads/2020/05/instagram-In-Stream_Square___Low-carb-Caesar-salad-4.jpg",
+  },
+  {
+    title: "Lasagna",
+    description: "With butter lettuce, tomato and sauce bechamel",
+    price: "$13.50",
+    image:
+      "https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-14-scaled.jpg",
+  },
+];
+
+export { items, localRestaurants, tabs, foods };
