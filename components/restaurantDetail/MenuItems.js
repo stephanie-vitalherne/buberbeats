@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView, StyleSheet } from "react-native";
 import { Divider } from "react-native-elements";
 import { foods } from "../../data/dummyData";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function MenuItems({ restaurantName }) {
   const dispatch = useDispatch();
@@ -16,6 +16,11 @@ export default function MenuItems({ restaurantName }) {
         checkboxValue: checkboxValue,
       },
     });
+  const cartItems = useSelector(
+    (state) => state.cartReducer.selectedItems.items
+  );
+  const isFoodInCart = (food, cartItems) =>
+    Boolean(cartItems.find((item) => item.title === food.title));
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -26,6 +31,7 @@ export default function MenuItems({ restaurantName }) {
               iconStyle={styles.checkbox}
               fillColor="green"
               onPress={(checkboxValue) => selectItem(food, checkboxValue)}
+              isChecked={isFoodInCart(food, cartItems)}
             />
             <FoodInfo food={food} />
             <FoodImage food={food} />
