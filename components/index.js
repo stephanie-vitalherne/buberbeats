@@ -5,3 +5,4 @@ export { default as RestaurantItems } from "./home/RestaurantItems";
 export { default as BottomTabs } from "./home/BottomTabs";
 export { default as About } from "./restaurantDetail/About";
 export { default as MenuItems } from "./restaurantDetail/MenuItems";
+export { default as ViewCart } from "./restaurantDetail/ViewCart";
